@@ -1,6 +1,7 @@
 // Admin login 
 // document.getElementById("main-admin-section").style.display = "none";
 document.getElementById("loginForm").style.display = "none";
+document.getElementById("add-customer").style.display = "none";
 
 function admin_login() {
     // Simulate a successful login (you should replace this with actual login logic)
@@ -24,4 +25,28 @@ function admin_login() {
         // Invalid credentials
         alert("Invalid username or password");
     }
+}
+
+function addCustomer() {
+    document.getElementById("All-customers").style.display = "none";
+    document.getElementById("add-customer").style.display = "block";
+
+    // Collect form data
+    var formData = $("#add-customer form").serializeArray();
+
+    // Send AJAX request
+    $.ajax({
+        type: "POST",
+        url: "all_customers.php",
+        data: formData,
+        success: function(response) {
+            // alert(response);
+        }
+    });
+}
+
+
+function closeForm(){
+    dodument.getElementById("add-customer").reset();
+    document.getElementById("add-customer").style.display = "none";
 }

@@ -26,10 +26,15 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="./admin-style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
+
+  
   <!-- =====Admin Login ===== -->
   <div class="admin-login-container" id="loginForm">
     <h2>Admin Login</h2>
@@ -60,9 +65,9 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto " href="#">Dashboard</a></li>
-            <li><a class="nav-link scrollto" href="#">Customers</a></li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto " href="#dashboard">Dashboard</a></li>
+            <li><a class="nav-link scrollto" href="#Customers">Customers</a></li>
+            <li><a class="nav-link scrollto" href="#consumption">Consumption</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -77,8 +82,76 @@
         <h2>Dasboard visuals</h2>
       </div>
     </section>
-    <section id="Customers" class="Customers"></section>
-    <section id="" class=""></section>
+    <section id="Customers" class="Customers">
+      <div class="container" data-aos="fade-up">
+          <h2 class="customers-header" data-aos="zoom-out" data-aos-delay="100">My Customers</h2>
+          <div class="customer-nav">
+            <ul>
+              <li data-aos="zoom-out" data-aos-delay="100"><button type="button" onclick="addCustomer()">Add customers</button></li>
+              <li data-aos="zoom-out" data-aos-delay="150"><button type="button">Update Customer</button></li>
+              <li data-aos="zoom-out" data-aos-delay="200"><button type="button">Remove Customer</button></li>
+            </ul>
+          </div>
+          <div class="AddCustomer" id="add-customer">
+            <form action="all_customers.php" autocomplete="on" method="post">
+              <button type="button" id="close-button" onclick="closeForm()">X</button>
+              <br>
+              <label for="customer-ID">Customer ID No:</label>
+              <input type="number" id="customer_id" name="customer_id" required>
+              
+              <label for="customer-name">Customer Name:</label>
+              <input type="text" id="customer_name" name="customer_name" style="width: 250px;" required>
+              <br>
+              <label for="Phone-No">Main Phone No:</label>
+              <input type="number" id="main-phone-no" name="main-phone-no" required>
+              
+              <label for="Alternate-Phone-No">Alternate Phone No:</label>
+              <input type="number" id="Alternate-phone-no" name="Alternate-phone-no">
+              <br>
+              <label for="standard-charges">Standard Charges Applicable:</label>
+              <select id="standard-charges" name="standard-charges" style="width: 70px;" required>
+                <option value="True">Yes</option>
+                <option value="False">No</option>
+              </select>
+              
+              <label for="conn-date">Connection Date:</label>
+              <input type="date" id="conn-date" name="conn-date" required>
+              <br>
+              <label for="customer-location">Location Descrition:</label>
+              <input type="text" id="location-desc" name="location-desc" style="width: 60%; height: 70px;" required>
+              <br>
+              <br>
+              <button type="submit" id="addCustomerButton" name="addCustomerButton" class="button">Add Customer</button>
+              <script>
+                $(document).ready(function() {
+                $("#addCustomerButton").on("click", function() {
+                    addCustomer();
+                });
+              });
+              </script>
+            </form>
+          </div>
+          <div class="col-lg-9" id="All-customers">
+            <table>
+              <script>
+                $(document).ready(function() {
+                  $.ajax({
+                    url: "all_customers.php",
+                    type: "GET",
+                    success: function(data) {
+                      $("#All-customers").html(data);
+                    }
+                  });
+                });
+              </script>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="consumption" class="Consumption">
+
+    </section>
     <section id="" class=""></section>
 
   </main><!-- End #main -->
@@ -90,7 +163,7 @@
         &copy; Copyright <strong><span>kings Water</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://bootstrapmade.com/">Vanatel Technologies</a>
       </div>
     </div>
   </footer><!-- End Footer -->

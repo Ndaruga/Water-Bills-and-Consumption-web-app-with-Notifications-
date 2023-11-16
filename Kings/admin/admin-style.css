@@ -1,0 +1,175 @@
+#dashboard {
+    height: 100vh;
+    background-color: azure;
+}
+
+#Customers {
+    /* height: 100vh; */
+    background-color: rgb(243, 244, 247);
+}
+
+#Customers h2{
+    text-align: center;
+}
+
+.customer-nav {
+    padding: 0;
+    text-align:center;
+    margin: 0 auto;
+  }
+  
+  .customer-nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .customer-nav li {
+    position: relative;
+    display: inline-block;
+    border-radius: .2em;
+  }
+  
+  .customer-nav>ul>li {
+    white-space: nowrap;
+    padding: 15px 30px;
+  }
+  
+  .customer-nav li button {
+      border-radius: .7em;
+      background-color: #106eea;
+      border-color: #106eea;
+      color: #fff;
+    }
+    
+  .customer-nav li button:hover {
+      background: #3b8af2;
+    }
+
+
+#All-customers table {
+  display: none;
+  color: #106eea;
+  background-color: rgb(221, 59, 30);
+  border: 1px solid red;
+}
+/* 
+ .Customers table .AllCustomers {
+  width: 100%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #73abf5;
+  border-style: solid;
+  color: #000000;
+}
+  
+.Customers table .AllCustomers td, table .AllCustomers th {
+  border-width: 2px;
+  border-color: #73abf5;
+  border-style: solid;
+  padding: 3px;
+}
+
+#Customers table .AllCustomers thead {
+  background-color: #73abf5;
+}
+
+#Customers table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/*---------------------Add customers form ---------------*/
+.AddCustomer form {
+  display: block;
+  width: 80%;
+  background-color: rgb(214, 227, 227);
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+  #close-button {
+    position: unset;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 999;
+    margin: 10px;
+    font-size: 1.5rem;
+  }
+
+ label {
+    font-size: 1rem;
+    display: inline-block;
+    /* width: 170px; */
+    text-align: left;
+    margin: 0 20px 10px 40px;
+
+  }
+  
+  input,
+  select {
+    display: inline-block;
+    width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0 0 10px 0;
+  }
+
+  
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #106eea;
+  }
+  
+  input[type="submit"] {
+    background-color: #106eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin: 10px 40%;
+
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #005ae6;
+    font-weight: bold;
+  }
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 9999;
+}
+
+/* Pop-up styles */
+.popup {
+  background: #4CAF50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Success message styles */
+.success-message {
+  margin: 0;
+}
