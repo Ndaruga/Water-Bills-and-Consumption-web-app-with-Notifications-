@@ -92,7 +92,7 @@
               <li data-aos="zoom-out" data-aos-delay="200"><button type="button">Remove Customer</button></li>
             </ul>
           </div>
-          <div class="AddCustomer" id="add-customer">
+          <div class="AddCustomer" id="add-customer" data-aos="zoom-out" data-aos-delay="100">
             <form action="all_customers.php" autocomplete="on" method="post">
               <button type="button" id="close-button" onclick="closeForm()">X</button>
               <br>
@@ -131,15 +131,16 @@
               </script>
             </form>
           </div>
-          <div class="col-lg-9" id="All-customers">
+          <div class="col-lg-9" id="CustomerDetails">
             <table>
               <script>
                 $(document).ready(function() {
                   $.ajax({
                     url: "all_customers.php",
                     type: "GET",
+                    data: { CustomerDetails: true }, // Pass the parameter
                     success: function(data) {
-                      $("#All-customers").html(data);
+                        $("#CustomerDetails").html(data);
                     }
                   });
                 });
@@ -150,7 +151,27 @@
       </div>
     </section>
     <section id="consumption" class="Consumption">
+      <div class="container" data-aos="fade-up">
+        <div class="col-lg-9">
+          <h2>Customer Monthly consumption</h2>
+        </div>
+        <div id="showAllConsumption">
+          <script>
+            $(document).ready(function() {
+              $.ajax({
+                url: "all_customers.php",
+                type: "GET",
+                data: { showAllConsumption: true }, // Pass the parameter
+                success: function(data) {
+                    $("#showAllConsumption").html(data);
+                }
+              });
+            });
+          </script>
+        </table>
+        </div>
 
+      </div>
     </section>
     <section id="" class=""></section>
 
@@ -163,7 +184,7 @@
         &copy; Copyright <strong><span>kings Water</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">Vanatel Technologies</a>
+        Designed by <a href="#">Vanatel Technologies</a>
       </div>
     </div>
   </footer><!-- End Footer -->

@@ -28,7 +28,7 @@ function admin_login() {
 }
 
 function addCustomer() {
-    document.getElementById("All-customers").style.display = "none";
+    document.getElementById("CustomerDetails").style.display = "none";
     document.getElementById("add-customer").style.display = "block";
 
     // Collect form data
@@ -50,3 +50,4 @@ function closeForm(){
     dodument.getElementById("add-customer").reset();
     document.getElementById("add-customer").style.display = "none";
 }
+
