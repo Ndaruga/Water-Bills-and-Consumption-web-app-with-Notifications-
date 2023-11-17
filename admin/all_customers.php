@@ -1,10 +1,13 @@
 <?php
+// Load environment variables from .env file
+$env = parse_ini_file('.env');
 
-$serverName = "kingswater-server.database.windows.net";
+
+$serverName = $env['AZURE_SQL_SERVERNAME'];
 $connectionOptions = array(
-    "Database" => "kingswater-database",
-    "Uid" => "kingswater-server-admin",
-    "PWD" => "M41207X0LY7DNL2E$"
+    "Database" => $env['AZURE_SQL_DATABASE'],
+    "Uid" => $env['AZURE_SQL_UID'],
+    "PWD" => $env['AZURE_SQL_PWD']
 );
 
 $conn = sqlsrv_connect($serverName, $connectionOptions);
