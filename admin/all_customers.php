@@ -1,17 +1,22 @@
 <?php
+
 // Load environment variables from .env file
 $env = parse_ini_file('.env');
 
-
+// Access environment variables
 $serverName = $env['AZURE_SQL_SERVERNAME'];
+$database = $env['AZURE_SQL_DATABASE'];
+$username = $env['AZURE_SQL_UID'];
+$password = $env['AZURE_SQL_PWD'];
+
+// Connect to SQL Server
 $connectionOptions = array(
-    "Database" => $env['AZURE_SQL_DATABASE'],
-    "Uid" => $env['AZURE_SQL_UID'],
-    "PWD" => $env['AZURE_SQL_PWD']
+    "Database" => $database,
+    "Uid" => $username,
+    "PWD" => $password
 );
 
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-
 
 if (isset($_GET['CustomerDetails'])) {
     getCustomerDetails($conn);
