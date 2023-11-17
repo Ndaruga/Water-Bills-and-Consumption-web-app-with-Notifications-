@@ -1,10 +1,10 @@
 <?php
 
-$serverName = "waterbillsandconsumotion.database.windows.net";
+$serverName = "kingswater-server.database.windows.net";
 $connectionOptions = array(
-    "Database" => "Test Meter reader",
-    "Uid" => "Water-Admin",
-    "PWD" => "DB-l0gin"
+    "Database" => "kingswater-database",
+    "Uid" => "kingswater-server-admin",
+    "PWD" => "M41207X0LY7DNL2E$"
 );
 
 $conn = sqlsrv_connect($serverName, $connectionOptions);
