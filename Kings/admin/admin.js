@@ -46,8 +46,17 @@ function addCustomer() {
 }
 
 
+// function closeForm(){
+//     document.getElementById("add-customer").reset();
+//     document.getElementById("add-customer").style.display = "none";
+// }
 function closeForm(){
-    dodument.getElementById("add-customer").reset();
-    document.getElementById("add-customer").style.display = "none";
+    var form = document.getElementById("add-customer");
+    if (form) {
+        form.reset();
+        form.style.display = "none";
+        alert("Form has been reset and closed.");
+    } else {
+        alert("Form not found.");
+    }
 }
-

@@ -4,7 +4,7 @@
 }
 
 #Customers {
-    /* height: 100vh; */
+    min-height: 100vh;
     background-color: rgb(243, 244, 247);
 }
 
@@ -55,33 +55,7 @@
   background-color: rgb(221, 59, 30);
   border: 1px solid red;
 }
-/* 
- .Customers table .AllCustomers {
-  width: 100%;
-  background-color: #ffffff;
-  border-collapse: collapse;
-  border-width: 2px;
-  border-color: #73abf5;
-  border-style: solid;
-  color: #000000;
-}
-  
-.Customers table .AllCustomers td, table .AllCustomers th {
-  border-width: 2px;
-  border-color: #73abf5;
-  border-style: solid;
-  padding: 3px;
-}
 
-#Customers table .AllCustomers thead {
-  background-color: #73abf5;
-}
-
-#Customers table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
 
 /*---------------------Add customers form ---------------*/
 .AddCustomer form {
