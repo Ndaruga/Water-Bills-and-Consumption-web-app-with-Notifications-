@@ -4,11 +4,11 @@
 $env = parse_ini_file('.env');
 
 // Access environment variables
+
 $serverName = $env['AZURE_SQL_SERVERNAME'];
 $database = $env['AZURE_SQL_DATABASE'];
 $username = $env['AZURE_SQL_UID'];
 $password = $env['AZURE_SQL_PWD'];
-
 
 
 // Connect to SQL Server

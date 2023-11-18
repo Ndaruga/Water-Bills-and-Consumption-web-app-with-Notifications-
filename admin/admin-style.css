@@ -1,54 +1,61 @@
 #dashboard {
     height: 100vh;
-    background-color: azure;
+    background-color: rgb(213, 246, 246);
 }
 
 #Customers {
-    min-height: 100vh;
-    background-color: rgb(243, 244, 247);
+  min-height: 60vh;
+  background-color: rgb(217, 223, 224);
 }
 
-  #Customers h2{
-    text-align: center;
+#consumption {
+  min-height: 100vh;
+  background-color:  rgb(213, 246, 246);
 }
 
-  .customer-nav {
+#consumption,
+#Customers h2{
+  text-align: center;
+}
+
+.customer-nav,
+.consumption-nav {
   background-color: rgb(174, 189, 228);
   padding: 0;
   text-align:center;
+  margin: 20px auto;
+  border-radius: .5em;
+}
+
+.consumption-nav ul,
+.customer-nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+ 
+.consumption-nav>ul>li,
+.customer-nav>ul>li {
+  white-space: nowrap;
+  padding: 15px 30px;
   margin: 0 auto;
 }
   
-  .customer-nav ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
-    margin: 0 auto;
-  }
-  
-  .customer-nav li {
-    position: relative;
-    display: inline-block;
-    border-radius: .2em;
-  }
-  
-  .customer-nav>ul>li {
-    white-space: nowrap;
-    padding: 15px 30px;
-  }
-  
-  .customer-nav li button {
-      border-radius: .7em;
-      background-color: #106eea;
-      border-color: #106eea;
-      color: #fff;
-    }
+.customer-nav li button,
+.consumption-nav li button{
+  border-radius: .7em;
+  background-color: #106eea;
+  border-color: #106eea;
+  color: #fff;
+}
     
-  .customer-nav li button:hover {
-      background: #0550b2;
-    }
+.customer-nav li button:hover,
+.consumption-nav li button:hover {
+  background: #0550b2;
+}
 
 
 #All-customers table {
@@ -149,3 +156,7 @@
 .success-message {
   margin: 0;
 }
+
+
+
+/* ------------ Consumption dection---------------------- */

@@ -150,8 +150,19 @@
     </section>
     <section id="consumption" class="Consumption">
       <div class="container" data-aos="fade-up">
-        <div class="col-lg-12">
-          <h2>Customer Monthly consumption</h2>
+        <h2 class="consumption-header" data-aos="zoom-out" data-aos-delay="100">Customer Monthly Consumption</h2>
+        <div class="consumption-nav">
+          <ul>
+            <li data-aos="zoom-out" data-aos-delay="100"><h5 class="CurrentMonth">Current Month: <span style="color: #106eea" id="currentMonth"></span></h5></li>
+            <script>
+              $(document).ready(function() {
+                getCurrentMonth();
+              });
+            </script>
+            <li data-aos="zoom-out" data-aos-delay="150"><button type="button" onclick="addNewCol()" >Add Data</button></li>
+            <li data-aos="zoom-out" data-aos-delay="150"><button type="button" onclick="addPrevMonthCol()" >Add <span>November</span>'s Consumption</button></li>
+            <li data-aos="zoom-out" data-aos-delay="200"><button type="button">Notify Customers</button></li>
+          </ul>
         </div>
         <div id="showAllConsumption">
           <table>

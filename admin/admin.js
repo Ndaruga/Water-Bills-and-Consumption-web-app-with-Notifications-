@@ -51,3 +51,21 @@ function closeForm() {
     document.getElementById("AddCustomerForm").style.display = "none";
     document.getElementById("CustomerDetails").style.display = "block";
 }
+
+function getCurrentMonth() {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const date = new Date();
+
+    document.getElementById('currentMonth').innerHTML = months[date.getMonth()].substring(0,3) + ' ' + date.getFullYear();
+    // const monthName = date.toLocaleString('default', { month: 'long' }).substring(0,3);
+    // document.getElementById('CurrentMonth').innerHTML = monthName + ' ' + date.getFullYear();
+}
+
+
+function addPrevMonthCol() {
+
+}
+
+function addNewCol(){
+    
+}
