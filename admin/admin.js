@@ -46,17 +46,8 @@ function addCustomer() {
 }
 
 
-// function closeForm(){
-//     document.getElementById("add-customer").reset();
-//     document.getElementById("add-customer").style.display = "none";
-// }
-function closeForm(){
-    var form = document.getElementById("add-customer");
-    if (form) {
-        form.reset();
-        form.style.display = "none";
-        alert("Form has been reset and closed.");
-    } else {
-        alert("Form not found.");
-    }
+function closeForm() {
+    document.getElementById("AddCustomerForm").reset();
+    document.getElementById("AddCustomerForm").style.display = "none";
+    document.getElementById("CustomerDetails").style.display = "block";
 }

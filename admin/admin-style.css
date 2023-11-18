@@ -8,15 +8,16 @@
     background-color: rgb(243, 244, 247);
 }
 
-#Customers h2{
+  #Customers h2{
     text-align: center;
 }
 
-.customer-nav {
-    padding: 0;
-    text-align:center;
-    margin: 0 auto;
-  }
+  .customer-nav {
+  background-color: rgb(174, 189, 228);
+  padding: 0;
+  text-align:center;
+  margin: 0 auto;
+}
   
   .customer-nav ul {
     margin: 0;
@@ -24,6 +25,7 @@
     display: flex;
     list-style: none;
     align-items: center;
+    margin: 0 auto;
   }
   
   .customer-nav li {
@@ -45,7 +47,7 @@
     }
     
   .customer-nav li button:hover {
-      background: #3b8af2;
+      background: #0550b2;
     }
 
 

@@ -10,8 +10,6 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -93,8 +91,8 @@
             </ul>
           </div>
           <div class="AddCustomer" id="add-customer" data-aos="zoom-out" data-aos-delay="100">
-            <form action="all_customers.php" autocomplete="on" method="post">
-              <button type="button" id="close- button" onclick="closeForm()">X</button>
+            <form action="all_customers.php" autocomplete="on" method="post" id="AddCustomerForm">
+              <button type="button" id="close-button" onclick="closeForm()">X</button>
               <br>
               <label for="customer-ID">Customer ID No:</label>
               <input type="number" id="customer_id" name="customer_id" required>
@@ -110,8 +108,8 @@
               <br>
               <label for="standard-charges">Standard Charges Applicable:</label>
               <select id="standard-charges" name="standard-charges" style="width: 70px;" required>
-                <option value="True">Yes</option>
-                <option value="False">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
               
               <label for="conn-date">Connection Date:</label>
