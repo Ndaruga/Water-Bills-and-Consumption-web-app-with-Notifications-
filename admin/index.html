@@ -26,6 +26,9 @@
   <link href="../assets/css/style.css" rel="stylesheet">
   <link href="./admin-style.css" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
@@ -159,27 +162,92 @@
                 getCurrentMonth();
               });
             </script>
-            <li data-aos="zoom-out" data-aos-delay="150"><button type="button" onclick="addNewCol()" >Add Data</button></li>
+            <li data-aos="zoom-out" data-aos-delay="150"><button type="button" onclick="addNewCol()">New Month</button></li>
+            <script>
+              function addNewCol() {
+                // Show the modal with select options
+                $("#add_new_data_col").dialog({
+                  resizable: false,
+                  height: "auto",
+                  width: 300,
+                  modal: true,
+                  buttons: {
+                    "Add Column": function () {
+                      // Get the selected month
+                      var selectedMonth = $("#newMonth").val();
+            
+                      // Call the PHP function to add a new column
+                      $.ajax({
+                        url: "all_customers.php",
+                        type: "POST",
+                        data: { ColumnName: selectedMonth },
+                        success: function (data) {
+                          // You can handle the success response here
+                          alert(data);
+                        }
+                      });
+            
+                      // Close the modal
+                      $(this).dialog("close");
+                    },
+                    Cancel: function () {
+                      // Close the modal without adding a new column
+                      $(this).dialog("close");
+                    }
+                  }
+                });
+              }
+            </script>
             <li data-aos="zoom-out" data-aos-delay="150"><button type="button" onclick="addPrevMonthCol()" >Add <span>November</span>'s Consumption</button></li>
-            <li data-aos="zoom-out" data-aos-delay="200"><button type="button">Notify Customers</button></li>
+            <li data-aos="zoom-out" data-aos-delay="200"><button type="button" onclick="NotifyCustomers()">Notify Customers</button></li>
           </ul>
+        </div>
+        <div id="add_new_data_col">
+          <label style="font-weight: bold;">Select Month: </label>
+          <select id="newMonth" name="newMonth" style="width: 110px; height: 30px; padding: 0px;" required>
+            <option value=" ">Select</option>
+            <option value="Jan">January</option>
+            <option value="Feb">February</option>
+            <option value="Mar">March</option>
+            <option value="Apr">April</option>
+            <option value="May">May</option>
+            <option value="Jun">June</option>
+            <option value="Jul">July</option>
+            <option value="Aug">August</option>
+            <option value="Sep">September</option>
+            <option value="Oct">October</option>
+            <option value="Nov">November</option>
+            <option value="Dec">December</option>
+          </select>
         </div>
         <div id="showAllConsumption">
           <table>
-            <script>
-              $(document).ready(function() {
-                $.ajax({
-                  url: "all_customers.php",
-                  type: "GET",
-                  data: { showAllConsumption: true }, // Pass the parameter
-                  success: function(data) {
-                      $("#showAllConsumption").html(data);
-                  }
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Jan 2023</th>
+                <th>Feb 2023</th>
+                <th>Mar 2023</th>
+                <th>Apr 2023</th>
+              </tr>
+            </thead>
+            <tbody id="consumptionTableBody">
+              <!-- Dynamic rows will be added here -->
+              <script>
+                $(document).ready(function() {
+                  $.ajax({
+                    url: "all_customers.php",
+                    type: "GET",
+                    data: { showAllConsumption: true },
+                    success: function(data) {
+                      $("#consumptionTableBody").html(data);
+                    }
+                  });
                 });
-              });
-            </script>
+              </script>
+            </tbody>
           </table>
-        </table>
         </div>
 
       </div>

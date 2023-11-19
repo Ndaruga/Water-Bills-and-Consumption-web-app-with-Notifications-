@@ -2,6 +2,7 @@
 // document.getElementById("main-admin-section").style.display = "none";
 document.getElementById("loginForm").style.display = "none";
 document.getElementById("add-customer").style.display = "none";
+// document.getElementById("add_new_data_col").style.display = "none";
 
 function admin_login() {
     // Simulate a successful login (you should replace this with actual login logic)
@@ -63,9 +64,38 @@ function getCurrentMonth() {
 
 
 function addPrevMonthCol() {
-
-}
-
-function addNewCol(){
     
 }
+
+// function addNewCol(){
+//     $("#add_new_data_col").dialog({
+//         resizable: false,
+//         height: "auto",
+//         width: 300,
+//         modal: true,
+//         buttons: {
+//           "Add Column": function () {
+//             // Get the selected month
+//             var selectedMonth = $("#newMonth").val();
+  
+//             // Call the PHP function to add a new column
+//             $.ajax({
+//               url: "all_customers.php", // Replace with the actual PHP file path
+//               type: "POST",
+//               data: { ColumnName: selectedMonth },
+//               success: function (data) {
+//                 // You can handle the success response here
+//                 alert(data);
+//               }
+//             });
+  
+//             // Close the modal
+//             $(this).dialog("close");
+//           },
+//           Cancel: function () {
+//             // Close the modal without adding a new column
+//             $(this).dialog("close");
+//           }
+//         }
+//       });
+// }

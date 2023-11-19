@@ -5,11 +5,15 @@ $env = parse_ini_file('.env');
 
 // Access environment variables
 
-$serverName = $env['AZURE_SQL_SERVERNAME'];
-$database = $env['AZURE_SQL_DATABASE'];
-$username = $env['AZURE_SQL_UID'];
-$password = $env['AZURE_SQL_PWD'];
+// $serverName = $env['AZURE_SQL_SERVERNAME'];
+// $database = $env['AZURE_SQL_DATABASE'];
+// $username = $env['AZURE_SQL_UID'];
+// $password = $env['AZURE_SQL_PWD'];
 
+$serverName = "kingswater-server.database.windows.net";
+$database = "kingswater-database";
+$username = "kingswater-server-admin";
+$password = "M41207X0LY7DNL2E$";
 
 // Connect to SQL Server
 $connectionOptions = array(
@@ -143,8 +147,6 @@ function allCustomerConsumption($conn){
         die(print_r(sqlsrv_errors(), true));
     }
 
-    // Echo the table header
-    echo "<tr><th>Name</th><th>Phone Number</th><th>Jan 2023</th><th>Feb 2023</th><th>Mar 2023</th><th>Apr 2023</th></tr>";
 
     // Initialize an array to store table rows
     $tableRows = array();
